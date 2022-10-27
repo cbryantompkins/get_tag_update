@@ -11,8 +11,7 @@ do
 done
 
 #get highest tag number, and add 1.0.0 if doesn't exist
-CURRENT_VERSION=${GITHUB_REF#refs/*/}
-# `git describe --abbrev=0 --tags 2>/dev/null`
+CURRENT_VERSION=`git describe --abbrev=0 --tags`
 if [[ $CURRENT_VERSION == '' ]]
 then
   CURRENT_VERSION='1.0.0'
